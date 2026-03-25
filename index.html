@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speed-to-Lead Demo Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 40px 20px;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    p.subtext {
+      text-align: center;
+      margin-bottom: 28px;
+      color: #6b7280;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      opacity: 0.95;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Speed-to-Lead Demo Form</h1>
+    <p class="subtext">Request a demo or contact sales.</p>
+
+    <form
+      action="https://hook.eu1.make.com/t4b8mykd23ggkvhba47jquxeqh4rhhl8"
+      method="POST"
+      accept-charset="UTF-8"
+    >
+      <div class="grid">
+        <div class="field">
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="first_name" required />
+        </div>
+
+        <div class="field">
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" required />
+        </div>
+
+        <div class="field full">
+          <label for="work_email">Work Email</label>
+          <input type="email" id="work_email" name="work_email" required />
+        </div>
+
+        <div class="field full">
+          <label for="phone_number">Phone Number</label>
+          <input type="tel" id="phone_number" name="phone_number" />
+        </div>
+
+        <div class="field full">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" />
+        </div>
+
+        <div class="field full">
+          <label for="company_website">Company Website</label>
+          <input type="url" id="company_website" name="company_website" placeholder="https://example.com" />
+        </div>
+
+        <div class="field full">
+          <label for="job_title">Job Title</label>
+          <input type="text" id="job_title" name="job_title" />
+        </div>
+
+        <div class="field full">
+          <label for="request_type">Request Type</label>
+          <select id="request_type" name="request_type" required>
+            <option value="">Select one</option>
+            <option value="Request demo">Request demo</option>
+            <option value="Contact sales">Contact sales</option>
+            <option value="General inquiry">General inquiry</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="company_size_band">Company Size Band</label>
+          <select id="company_size_band" name="company_size_band">
+            <option value="">Select one</option>
+            <option value="1-10">1-10</option>
+            <option value="11-50">11-50</option>
+            <option value="51-200">51-200</option>
+            <option value="201+">201+</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="use_case">Use Case</label>
+          <select id="use_case" name="use_case">
+            <option value="">Select one</option>
+            <option value="Sales automation">Sales automation</option>
+            <option value="Lead routing">Lead routing</option>
+            <option value="Inbound ops">Inbound ops</option>
+            <option value="Not sure">Not sure</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="lead_message">Lead Message</label>
+          <textarea id="lead_message" name="lead_message" required></textarea>
+        </div>
+
+        <input type="hidden" id="submitted_at" name="submitted_at" value="" />
+
+        <div class="field full">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+  document.querySelector('form').addEventListener('submit', function() {
+    document.getElementById('submitted_at').value = new Date().toISOString();
+  });
+</script>
+</body>
+</html>
